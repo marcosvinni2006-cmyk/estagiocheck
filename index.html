@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstagioCheck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+```
+<header>
+    <h1>📊 Meu Radar de Estágios</h1>
+    <p>Controle suas candidaturas de estágio</p>
+</header>
+
+<main>
+
+    <section class="summary">
+        <div class="card">
+            <span>Total</span>
+            <strong id="total">0</strong>
+        </div>
+
+        <div class="card">
+            <span>Aplicados</span>
+            <strong id="applied">0</strong>
+        </div>
+
+        <div class="card">
+            <span>Entrevistas</span>
+            <strong id="interview">0</strong>
+        </div>
+
+        <div class="card">
+            <span>Oferecidos</span>
+            <strong id="offer">0</strong>
+        </div>
+
+        <div class="card">
+            <span>Recusados</span>
+            <strong id="rejected">0</strong>
+        </div>
+    </section>
+
+    <section class="controls">
+
+        <button id="newAppBtn">+ Nova candidatura</button>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Pesquisar empresa ou cargo..."
+        >
+
+        <select id="filterStatus">
+            <option value="">Todos os status</option>
+            <option value="Aplicado">Aplicado</option>
+            <option value="Entrevista">Entrevista</option>
+            <option value="Oferecido">Oferecido</option>
+            <option value="Recusado">Recusado</option>
+        </select>
+
+        <input
+            type="text"
+            id="filterCompany"
+            placeholder="Filtrar empresa..."
+        >
+
+    </section>
+
+    <section id="followupAlert" class="alert hidden"></section>
+
+    <section class="table-container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Empresa</th>
+                    <th>Cargo</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Link</th>
+                    <th>Observações</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+        </table>
+
+    </section>
+
+</main>
+
+<!-- JANELA DO FORMULÁRIO -->
+
+<div id="modal" class="modal hidden">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">Nova candidatura</h2>
+
+        <form id="appForm">
+
+            <input type="hidden" id="editId">
+
+            <label>Empresa</label>
+            <input type="text" id="company" required>
+
+            <label>Cargo</label>
+            <input type="text" id="position" required>
+
+            <label>Data da candidatura</label>
+            <input type="date" id="date" required>
+
+            <label>Status</label>
+            <select id="status" required>
+                <option value="Aplicado">Aplicado</option>
+                <option value="Entrevista">Entrevista</option>
+                <option value="Oferecido">Oferecido</option>
+                <option value="Recusado">Recusado</option>
+            </select>
+
+            <label>Link da vaga</label>
+            <input type="url" id="link" placeholder="https://...">
+
+            <label>Observações</label>
+            <textarea id="notes" rows="4"></textarea>
+
+            <div class="form-buttons">
+                <button type="submit">Salvar candidatura</button>
+                <button type="button" id="cancelBtn">Cancelar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
